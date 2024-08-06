@@ -19,13 +19,42 @@
         </a>
     </div>
     <div style="text-align:center;padding-top: 60px" class="login">
-        <div class="account" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入注册时使用的用户名/邮箱">
-        </div>
-        <div class="pass" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入账户密码">
-        </div>
-        <button>登录账号</button>
+        <form action="http://localhost:8080/" method="post" id="loginForm">
+            <div class="account" style="margin:20px;height: 40px;">
+                账户：<input type="text" name="username" id="uname" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入注册时使用的用户名">
+            </div>
+            <div class="pass" style="margin:20px;height: 40px;">
+                密码：<input type="password" name="pw" id="pw" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入账户密码">
+            </div>
+        </form>
+        <span id="msg" style="text-align:center;font-size: 15px"></span><br><br>
+        <button type="button" id="loginBin">登录账号</button><br><br><br>
+        <a href="register.html" style="text-align: center">没有账号？点此注册</a>
     </div>
 </body>
+<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+
+    $("#loginBin").click(function(){
+        var uname=$("#uname").val();
+        var upass=$("#pw").val();
+        if(IsEmpty(uname)){
+            $("#msg").html("用户名不可为空");
+            return;
+        }
+        if(IsEmpty(upass)){
+            $("#msg").html("密码不可为空");
+            return;
+        }
+        $("#loginForm").submit();
+    });
+    function IsEmpty(str){
+        if(str==null||str.trim()== ""){
+            return true;
+        }
+        return false;
+    };
+
+
+</script>
 </html>

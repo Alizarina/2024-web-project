@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="超链接，开始制作登录注册页面">
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="登陆注册页面加上输入框，开始搓数据库">
+      <change afterPath="$PROJECT_DIR$/backend/controller/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/lib/mybatis-3.5.16.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/lib/mysql-connector-j-9.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/userRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/util/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/jquery-3.7.1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,6 +39,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2k2LERcpsCXCvclEgWSMpkWgGNW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,9 +49,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Node.js.app.js.executor": "Run",
+    "Node.js.database.js.executor": "Run",
+    "Node.js.login.js.executor": "Run",
+    "Node.js.mysql.js.executor": "Run",
+    "Node.js.server.js.executor": "Run",
+    "Node.js.user_database.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/2024-web-project/frontend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/2024-web-project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,18 +66,33 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "npm.npm dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Users\\asus\\AppData\\Local\\Programs\\IntelliJ IDEA Ultimate\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\2024-web-project\frontend\lib" />
+      <recent name="E:\2024-web-project\frontend\src" />
       <recent name="E:\2024-web-project\frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\2024-web-project\backend\util" />
+      <recent name="E:\2024-web-project\backend" />
+      <recent name="E:\2024-web-project\frontend\src" />
       <recent name="E:\2024-web-project\frontend" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="login.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/backend/service/login.js" working-dir="$PROJECT_DIR$/frontend/src/backend/service">
+      <method v="2" />
+    </configuration>
     <configuration name="npm dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -68,11 +103,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.login.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -85,7 +126,11 @@
       <option name="presentableId" value="Default" />
       <updated>1722476612304</updated>
       <workItem from="1722476613343" duration="471000" />
-      <workItem from="1722500528557" duration="13864000" />
+      <workItem from="1722500528557" duration="22706000" />
+      <workItem from="1722658756722" duration="8396000" />
+      <workItem from="1722757750304" duration="17615000" />
+      <workItem from="1722857274794" duration="2000" />
+      <workItem from="1722925474770" duration="7975000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -111,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722570242806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="登陆注册页面加上输入框，开始搓数据库">
+      <option name="closed" value="true" />
+      <created>1722601678910</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722601678910</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +185,7 @@
     <MESSAGE value="前端已创建" />
     <MESSAGE value="页面简单布局" />
     <MESSAGE value="超链接，开始制作登录注册页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="超链接，开始制作登录注册页面" />
+    <MESSAGE value="登陆注册页面加上输入框，开始搓数据库" />
+    <option name="LAST_COMMIT_MESSAGE" value="登陆注册页面加上输入框，开始搓数据库" />
   </component>
 </project>
