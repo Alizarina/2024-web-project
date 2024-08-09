@@ -19,22 +19,94 @@
         </a>
     </div>
     <div style="text-align:center;padding-top: 60px" class="login">
-        <div class="account" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入用户名">
-        </div>
-        <div class="pass" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入密码">
-        </div>
-        <div class="re-pass" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请再次输入密码">
-        </div>
-        <div class="Email" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入你的电子邮箱">
-        </div>
-        <div class="nickname" style="margin:20px;height: 40px;text-align: center">
-            <input type="text" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请拟定昵称">
-        </div>
-        <button>确认注册</button>
+        <form id="registerForm">
+            <div class="account" style="margin:20px;height: 40px;text-align: center">
+                <input type="text" name="uname" id="uname" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入用户名(仅限英文字母/数字)">
+            </div>
+            <div class="check" style="margin:20px;height: 40px;text-align: center">
+                <button type="button" id="check" >检查用户名是否可用</button> :
+                <span id="msg2" style="font-size: 15px"></span>
+            </div>
+            <div class="pass" style="margin:20px;height: 40px;text-align: center">
+                <input type="password" name="pass1" id="pass1" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入密码">
+            </div>
+            <div class="re-pass" style="margin:20px;height: 40px;text-align: center">
+                <input type="password" name="pass2" id="pass2" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请再次输入密码">
+            </div>
+        </form>
+        <span id="msg" style="text-align:center;font-size: 15px"></span><br><br>
+        <button type="button" id="registerBin">确认注册</button><br><br><br>
+        <a href="login.html" style="text-align: center">已有账号？点此登录</a>
     </div>
 </body>
+<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+    var Ifchecked=0;
+    $("#registerBin").click(function(){
+        let uname=$("#uname").val();
+        let pass1=$("#pass1").val();
+        let pass2=$("#pass2").val();
+        if(IsEmpty(uname)){
+            $("#msg").html("用户名不可为空");
+            return;
+        }
+        if(IsEmpty(pass1)){
+            $("#msg").html("密码不可为空");
+            return;
+        }
+        if(IsEmpty(pass2)){
+            $("#msg").html("请确认密码");
+            return;
+        }
+        if(pass1!=pass2){
+            $("#msg").html("两次密码输入不一致！");
+            return;
+        }
+        if(Ifchecked===1){
+            $("#msg").html('');
+            $.ajax({
+                url:"http://localhost:5173/api/register",
+                method:'POST',
+                data:{
+                    username:uname,
+                    pw:pass1
+                },
+                success:function(res){
+                    console.log(res);
+                    $("#msg").html(res.message);
+                },
+                error:function (err){
+                    console.log(err);
+                }
+            })
+        }else{
+            $("#msg").html("请检查或修改用户名");
+            return;
+        }
+    });
+    $("#check").click(function(){
+        let uname=$("#uname").val();
+        $.ajax({
+            url:"http://localhost:5173/api/register/checkname",
+            method:'POST',
+            data:{
+                username:uname,
+            },
+            success:function(res){
+                console.log(res);
+                Ifchecked=1;
+                $("#msg2").html(res.message);
+            },
+            error:function (err){
+                console.log(err);
+            }
+        })
+    })
+    function IsEmpty(str){
+        if(str==null||str.trim()== ""){
+            return true;
+        }
+        return false;
+    };
+</script>
 </html>

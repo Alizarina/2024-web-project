@@ -19,7 +19,7 @@
         </a>
     </div>
     <div style="text-align:center;padding-top: 60px" class="login">
-        <form action="http://localhost:8080/" method="post" id="loginForm">
+        <form action="http://localhost:5173" method="post" id="loginForm">
             <div class="account" style="margin:20px;height: 40px;">
                 账户：<input type="text" name="username" id="uname" style="width: 200px;height: 30px;border-radius: 3px" placeholder="请输入注册时使用的用户名">
             </div>
@@ -34,7 +34,6 @@
 </body>
 <script type="text/javascript" src="src/jquery-3.7.1.js"></script>
 <script type="text/javascript">
-
     $("#loginBin").click(function(){
         var uname=$("#uname").val();
         var upass=$("#pw").val();
@@ -46,15 +45,28 @@
             $("#msg").html("密码不可为空");
             return;
         }
-        $("#loginForm").submit();
+        // $("#loginForm").submit();
+        $.ajax({
+            url:"http://localhost:5173/api/login",
+            method:'POST',
+            data:{
+                username:uname,
+                pw:upass
+            },
+            success:function(res){
+                console.log(res);
+                $("#msg").html(res.message);
+            },
+            error:function (err){
+                console.log(err);
+            }
+        })
     });
     function IsEmpty(str){
         if(str==null||str.trim()== ""){
             return true;
         }
         return false;
-    };
-
-
+    }
 </script>
 </html>
