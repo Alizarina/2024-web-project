@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="后端改为express框架，优化登录注册">
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="登录后页面变化+退出登录页面">
       <change afterPath="$PROJECT_DIR$/frontend/logout.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/src/components/userMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -127,7 +127,7 @@
       <workItem from="1723179189788" duration="56000" />
       <workItem from="1723179409387" duration="10844000" />
       <workItem from="1723200258165" duration="47000" />
-      <workItem from="1723280809696" duration="6375000" />
+      <workItem from="1723280809696" duration="6787000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -177,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723199801506</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="登录后页面变化+退出登录页面">
+      <option name="closed" value="true" />
+      <created>1723296286782</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723296286783</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +209,8 @@
     <MESSAGE value="登陆注册页面加上输入框，开始搓数据库" />
     <MESSAGE value="通过数据库校验登录+后端建立" />
     <MESSAGE value="后端改为express框架，优化登录注册" />
-    <option name="LAST_COMMIT_MESSAGE" value="后端改为express框架，优化登录注册" />
+    <MESSAGE value="登录后页面变化+退出登录页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录后页面变化+退出登录页面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
