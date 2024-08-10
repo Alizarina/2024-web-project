@@ -20,17 +20,11 @@ router.post('/', function(req, res) {
             throw error;
         }
         let password = '';
-        let nick='';
-        let id=0;
         if (result.length>0) {
             password = result[0].password;
-            nick=result.nickname;
-            id=result.id;
             if (password === pw) {
                 res.send({
-                    nickname:nick,
                     username: name,
-                    id:id,
                     check:1,
                     message:'登陆成功'
                 })

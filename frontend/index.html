@@ -16,11 +16,24 @@
       .LogoBar{border: 1px blue dashed; width: 350px; height: 110px;float: left;}
       .right{border: 1px pink dashed; width: 500px; height:110px;float: right;}
       .search{padding-top:55px;padding-left:30px;border: 1px green dashed; float:left;}
-      .account{border: 1px skyblue dashed; font-size: 15px;float: right;}
       #menu{padding: 0px;clear:both;height: 50px;background-color: salmon}
       .content1{padding: 1px;}
       #page{border:1px rebeccapurple dashed;height:800px;}
     </style>
+    <script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+    <script>
+        function onLoadHandler(event) {
+          let name=localStorage.getItem('user');
+          if (name===null||name===''){
+              $("#msg").html("<a href=\"register.html\"><p>注册账号</p></a>" +
+                  "<a href=\"login.html\"><p>登录账号</p></a>");
+          }else{
+            $("#msg").html("<p>欢迎你！</p>" +name+"<br>"+
+                    "<a href='logout.html'><p>退出登录</p></a>");
+          }
+        }
+        window.addEventListener('load', onLoadHandler);
+    </script>
   </head>
   <body>
     <div id="banner" class="largeHeader">
@@ -34,17 +47,12 @@
           <input type="text" placeholder="请输入搜索内容">
           <button>搜索</button>
         </div>
-        <div class="account">
-<!--          已登录则显示头像-->
-          <a href="register.html"><p>注册账号</p></a>
-          <a href="login.html"><p>登录账号</p></a>
-        </div>
-
+          <span id="msg" style="border: 1px skyblue dashed; font-size: 15px;float: right;"></span>
 
       </div>
     </div>
     <div id="menu" class="menu">
-        <div class="content1"><p>我还没想好要设置哪些分类，先搁置着吧</p></div>
+        <div class="content1" style="padding-left: 20px"><p>广场</p></div>
     </div>
     <div id="page" class="page"></div>
   </body>

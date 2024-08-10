@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/HeadLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>登录账号</title>
+    <style>
+        body {
+            background-color: #fff5ea;
+        }
+
+    </style>
+</head>
+<body>
+<div style="text-align:center;">
+    <a href="index.html">
+        <img src="public/i/Title.PNG" alt="兴趣花园" height="148" width="477" >
+    </a>
+</div>
+<div style="text-align:center;padding-top: 60px" class="logout">
+    <h3>是否确定退出登录？</h3>
+    <button id='logOut'>确定</button><br><br>
+    <a href="index.html"><button>取消</button></a><br><br>
+    <span id="msg"></span>
+</div>
+</body>
+<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+    $("#logOut").click(function(){
+        console.log('click');
+        localStorage.removeItem('user');
+        $("#msg").html('登录状态已解除');
+    });
+</script>
+</html>

@@ -56,6 +56,9 @@
             success:function(res){
                 console.log(res);
                 $("#msg").html(res.message);
+                if(res.check===1){
+                    localStorage.setItem('user',res.username);
+                }
             },
             error:function (err){
                 console.log(err);
