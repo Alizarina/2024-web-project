@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="登录后页面变化+退出登录页面">
-      <change afterPath="$PROJECT_DIR$/frontend/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/userMenu.jsx" afterDir="false" />
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="可以创建兴趣圈+首页显示">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/bin/www" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/circle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/create_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/logout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/circle.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/userMenu.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/.idea/untitled.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -128,6 +141,8 @@
       <workItem from="1723179409387" duration="10844000" />
       <workItem from="1723200258165" duration="47000" />
       <workItem from="1723280809696" duration="6787000" />
+      <workItem from="1723362877738" duration="7994000" />
+      <workItem from="1723426358437" duration="5107000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -185,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723296286783</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="登录后页面变化+退出登录页面">
+      <option name="closed" value="true" />
+      <created>1723296354996</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723296354996</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +233,8 @@
     <MESSAGE value="通过数据库校验登录+后端建立" />
     <MESSAGE value="后端改为express框架，优化登录注册" />
     <MESSAGE value="登录后页面变化+退出登录页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录后页面变化+退出登录页面" />
+    <MESSAGE value="可以创建兴趣圈+首页显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以创建兴趣圈+首页显示" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

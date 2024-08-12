@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/HeadLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title> 创建新的兴趣圈</title>
+    <style>
+        body {
+            background-color: #fff5ea;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;">
+        <a href="index.html">
+            <img src="public/i/Title.PNG" alt="兴趣花园" height="148" width="477" >
+        </a>
+    </div>
+    <div style="text-align:center;padding-top: 60px" class="here">
+        <div class="account" style="margin:20px;height: 40px;">
+            兴趣圈名称：<input type="text" name="username" id="name" style="width: 300px;height: 30px;border-radius: 3px" placeholder="请输入你要创建的兴趣圈名称">
+        </div>
+        <div class="check" style="margin:20px;height: 40px;text-align: center">
+            <button type="button" id="check" >检查名称是否可用</button> :
+            <span id="msg2" style="font-size: 15px"></span>
+        </div>
+        <div class="pass" style="margin:20px;">
+            兴趣圈简介：<input type="text" name="de" id="de" style="width: 300px;height: 80px;border-radius: 3px" placeholder="请输入兴趣圈简介">
+        </div>
+        <span id="msg"></span><br>
+        <button type="button" id="create">创建兴趣圈</button>
+    </div>
+</body>
+<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+    let Ifchecked=0;
+    $("#create").click(function (){
+        let name=$("#name").val();
+        let de=$("#de").val();
+        if(IsEmpty(name)) {
+            $("#msg").html("兴趣圈名称不可为空");
+            return;
+        }
+        if(IsEmpty(de)){
+            $("#msg").html("兴趣圈介绍不可为空");
+            return;
+        }
+        if(Ifchecked===1){
+            $("#msg").html('');
+            $.ajax({
+                url:"http://localhost:5173/api/create",
+                method:'POST',
+                data:{
+                    name:name,
+                    d:de
+                },
+                success:function(res){
+                    console.log(res);
+                    $("#msg").html(res.message);
+                },
+                error:function (err){
+                    console.log(err);
+                }
+            })
+        }else{
+            $("#msg").html("请检查或修改用户名");
+            return;
+        }
+    });
+    $("#check").click(function(){
+        let name=$("#name").val();
+        $.ajax({
+            url:"http://localhost:5173/api/create/checkname",
+            method:'POST',
+            data:{
+                name:name,
+            },
+            success:function(res){
+                console.log(res);
+                Ifchecked=res.id;
+                $("#msg2").html(res.message);
+            },
+            error:function (err){
+                console.log(err);
+            }
+        })
+    })
+    function IsEmpty(str){
+        if(str==null||str.trim()== ""){
+            return true;
+        }
+        return false;
+    };
+</script>
+</html>

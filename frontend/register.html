@@ -94,7 +94,7 @@
             },
             success:function(res){
                 console.log(res);
-                Ifchecked=1;
+                Ifchecked=res.id;
                 $("#msg2").html(res.message);
             },
             error:function (err){

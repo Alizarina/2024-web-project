@@ -13,12 +13,12 @@
     <style>
       div{margin: 10px; padding: 5px;}
       #banner
-      .LogoBar{border: 1px blue dashed; width: 350px; height: 110px;float: left;}
+      .LogoBar{ width: 350px; height: 110px;float: left;}
       .right{border: 1px pink dashed; width: 500px; height:110px;float: right;}
       .search{padding-top:55px;padding-left:30px;border: 1px green dashed; float:left;}
       #menu{padding: 0px;clear:both;height: 50px;background-color: salmon}
       .content1{padding: 1px;}
-      #page{border:1px rebeccapurple dashed;height:800px;}
+      #page{height:800px;background-color:#ffe0e0}
     </style>
     <script type="text/javascript" src="src/jquery-3.7.1.js"></script>
     <script>
@@ -31,6 +31,23 @@
             $("#msg").html("<p>欢迎你！</p>" +name+"<br>"+
                     "<a href='logout.html'><p>退出登录</p></a>");
           }
+          let show='';
+          $.ajax({
+              url:"http://localhost:5173/api/circle",
+              method:'GET',
+              success:function(res){
+                  for (let i in res) {
+                      show+=Circle(res[i].name,res[i].description);
+                  }
+                  $("#msg2").html(show);
+              },
+              error:function (err){
+                  console.log(err);
+              }
+          })
+        }
+        function Circle(name,de) {
+            return '<h2>'+name+'： '+de+'</h2>';
         }
         window.addEventListener('load', onLoadHandler);
     </script>
@@ -54,6 +71,15 @@
     <div id="menu" class="menu">
         <div class="content1" style="padding-left: 20px"><p>广场</p></div>
     </div>
-    <div id="page" class="page"></div>
+    <div id="page" class="page">
+        <div class="board" style="border: 1px blue dashed;float: right">
+            <a href="create_new.html"><p>点此创建新的兴趣圈</p></a>
+        </div>
+        <div class="groups" style="border: 1px blue dashed;float: left">
+            <span id="msg2"></span>
+        </div>
+
+    </div>
   </body>
+
 </html>
