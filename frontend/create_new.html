@@ -28,7 +28,7 @@
         <div class="pass" style="margin:20px;">
             兴趣圈简介：<input type="text" name="de" id="de" style="width: 300px;height: 80px;border-radius: 3px" placeholder="请输入兴趣圈简介">
         </div>
-        <span id="msg"></span><br>
+        <span id="msg"></span><br><br>
         <button type="button" id="create">创建兴趣圈</button>
     </div>
 </body>
@@ -58,6 +58,7 @@
                 success:function(res){
                     console.log(res);
                     $("#msg").html(res.message);
+                    window.location.href= 'index.html';
                 },
                 error:function (err){
                     console.log(err);

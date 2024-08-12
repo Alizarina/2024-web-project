@@ -58,6 +58,7 @@
                 $("#msg").html(res.message);
                 if(res.check===1){
                     localStorage.setItem('user',res.username);
+                    window.location.href= 'index.html';
                 }
             },
             error:function (err){

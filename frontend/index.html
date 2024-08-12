@@ -18,7 +18,9 @@
       .search{padding-top:55px;padding-left:30px;border: 1px green dashed; float:left;}
       #menu{padding: 0px;clear:both;height: 50px;background-color: salmon}
       .content1{padding: 1px;}
-      #page{height:800px;background-color:#ffe0e0}
+      #page{background-color:#ffe0e0;padding:20px}
+      .board{border: 1px blue dashed;float: right}
+      .groups{border: 1px blue dashed;margin-left:50px;margin-bottom:10px;width:900px;float: left}
     </style>
     <script type="text/javascript" src="src/jquery-3.7.1.js"></script>
     <script>
@@ -46,8 +48,11 @@
               }
           })
         }
-        function Circle(name,de) {
-            return '<h2>'+name+'： '+de+'</h2>';
+        function Circle(name) {
+            return '<div style="background-color: pink;width:400px;height: 50px;display: inline-block ">\n' +
+                '                <img src="public/i/logo_light.png" height="45" width="45" style="float: left">\n' +
+                '                <h2 style="padding-top: 10px;margin: 0px;text-align: center;color: #fff5ea">'+name+'</h2>\n' +
+                '            </div>';
         }
         window.addEventListener('load', onLoadHandler);
     </script>
@@ -61,8 +66,8 @@
         </a>
       <div class="right">
         <div class="search">
-          <input type="text" placeholder="请输入搜索内容">
-          <button>搜索</button>
+          <input type="text" placeholder="请输入要进入的兴趣圈名称">
+          <button>进入</button>
         </div>
           <span id="msg" style="border: 1px skyblue dashed; font-size: 15px;float: right;"></span>
 
@@ -72,13 +77,12 @@
         <div class="content1" style="padding-left: 20px"><p>广场</p></div>
     </div>
     <div id="page" class="page">
-        <div class="board" style="border: 1px blue dashed;float: right">
+        <div id="board" >
             <a href="create_new.html"><p>点此创建新的兴趣圈</p></a>
         </div>
-        <div class="groups" style="border: 1px blue dashed;float: left">
+        <div id="groups" >
             <span id="msg2"></span>
         </div>
-
     </div>
   </body>
 
