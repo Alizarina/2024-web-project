@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="美化首页显示+增加部分页面的自动跳转">
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="首页按钮区分+创建圈子页面限制登录后才可创建">
+      <change afterPath="$PROJECT_DIR$/backend/views/error.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/index.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/layout.pug" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/circle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/new_blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/new_comment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/create_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/create_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/circle.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/circle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/create.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,7 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/2024-web-project/frontend/public/i",
+    "last_opened_file_path": "E:/2024-web-project/frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,11 +78,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\2024-web-project\frontend" />
       <recent name="E:\2024-web-project\frontend\public\i" />
       <recent name="E:\2024-web-project\backend" />
       <recent name="E:\2024-web-project\frontend\lib" />
       <recent name="E:\2024-web-project\frontend\src" />
-      <recent name="E:\2024-web-project\frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\2024-web-project\backend" />
@@ -127,7 +134,8 @@
       <workItem from="1723200258165" duration="47000" />
       <workItem from="1723280809696" duration="6787000" />
       <workItem from="1723362877738" duration="7994000" />
-      <workItem from="1723426358437" duration="13685000" />
+      <workItem from="1723426358437" duration="35576000" />
+      <workItem from="1723550640473" duration="6769000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -209,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723467719012</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="首页按钮区分+创建圈子页面限制登录后才可创建">
+      <option name="closed" value="true" />
+      <created>1723508390277</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723508390277</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +252,8 @@
     <MESSAGE value="登录后页面变化+退出登录页面" />
     <MESSAGE value="可以创建兴趣圈+首页显示" />
     <MESSAGE value="美化首页显示+增加部分页面的自动跳转" />
-    <option name="LAST_COMMIT_MESSAGE" value="美化首页显示+增加部分页面的自动跳转" />
+    <MESSAGE value="首页按钮区分+创建圈子页面限制登录后才可创建" />
+    <option name="LAST_COMMIT_MESSAGE" value="首页按钮区分+创建圈子页面限制登录后才可创建" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

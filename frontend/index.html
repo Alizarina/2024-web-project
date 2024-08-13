@@ -17,7 +17,7 @@
       .right{border: 1px pink dashed; width: 500px; height:110px;float: right;}
       .search{padding-top:55px;padding-left:30px;border: 1px green dashed; float:left;}
       #menu{padding: 0px;clear:both;height: 50px;background-color: salmon}
-      .content1{padding: 1px;}
+      .content1{padding: 1px;color:#ffffff}
       #page{background-color:#ffe0e0;padding:20px}
       .board{border: 1px blue dashed;float: right}
       .groups{border: 1px blue dashed;margin-left:50px;margin-bottom:10px;width:900px;float: left}
@@ -49,8 +49,8 @@
           })
         }
         function Circle(name) {
-            let str='<button style="float: right" onclick="function turn() {localStorage.setItem(\'name\',\''+name+'\') }turn();">进入</button>';
-            return '<div style="background-color: pink;width:400px;height: 50px;display: inline-block ">\n' +
+            let str='<button style="float: right" onclick="function turn() {localStorage.setItem(\'name\',\''+name+'\');window.location.href=\'circle.html\' }turn();">进入</button>';
+            return '<div style="background-color: salmon;width:400px;height: 50px;display: inline-block ">\n' +
                 '                <img src="public/i/logo_light.png" height="45" width="45" style="float: left">\n' +
                 '                <h2 style="padding-top: 10px;margin: 0px;text-align: center;color: #fff5ea">'+name+'</h2>\n' +
                 str+
@@ -68,8 +68,8 @@
         </a>
       <div class="right">
         <div class="search">
-          <input type="text" placeholder="请输入要进入的兴趣圈名称">
-          <button>进入</button>
+          <input type="text" id='text-circle' placeholder="请输入要进入的兴趣圈名称">
+          <button id="text-enter">进入</button>
         </div>
           <span id="msg" style="border: 1px skyblue dashed; font-size: 15px;float: right;"></span>
 
@@ -82,10 +82,34 @@
         <div id="board" >
             <a href="create_new.html"><p>点此创建新的兴趣圈</p></a>
         </div>
-        <div id="groups" >
+        <div id="groups"  >
             <span id="msg2"></span>
         </div>
     </div>
   </body>
+  <script>
+      $('#text-enter').click(function(){
+         let name=$('#text-circle').val();
+         if(name!=null||name!=''){
+             $.ajax({
+                 url:"http://localhost:5173/api/create/checkname",
+                 method:'POST',
+                 data:{
+                     name:name,
+                 },
+                 success:function(res){
+                     Ifchecked=res.id;
+                     if(Ifchecked===0){
+                         localStorage.setItem('name',name);
+                         window.location.href='circle.html';
+                     }
+                 },
+                 error:function (err){
+                     console.log(err);
+                 }
+             })
+         }
 
+      });
+  </script>
 </html>

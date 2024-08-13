@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/HeadLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>兴趣圈</title>
+    <style>
+        body {
+            background-color: #fff5ea;
+        }
+        #page {padding:20px}
+        .word{}
+        .blogs{background-color:#ffe0e0;display:inline-block;float:right;width: 900px}
+        .huoyuedu{background-color:#ffe0e0;display:inline-block;float: left;width: 200px}
+    </style>
+    <script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+    <script>
+        function onLoadHandler(event) {
+            let name=localStorage.getItem('name');
+            if(name!=null){
+                $('#name').html(name);
+                $.ajax({
+                    url:"http://localhost:5173/api/circle/details",
+                    method:'POST',
+                    data:{
+                        name:name
+                    },
+                    success:function(res){
+                        $("#de").html(res);
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+                let show='';
+                $.ajax({
+                    url:"http://localhost:5173/api/circle/blogs",
+                    method:'POST',
+                    data:{
+                        name:name
+                    },
+                    success:function(res){
+                        console.log(res);
+                        for (let i in res) {
+                            show+=Blog(res[i].blog_id,res[i].author_name,res[i].pic1,res[i].content,res[i].com1,res[i].com2,res[i].com3);
+                        }
+                        $("#content").html(show);
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+                let show2='';
+                $.ajax({
+                    url:"http://localhost:5173/api/circle/huoyue",
+                    method:'POST',
+                    data:{
+                        name:name
+                    },
+                    success:function(res){
+                        console.log(res);
+                        for (let i in res) {
+                            show2+=People(res[i].username,res[i].huoyuedu);
+                        }
+                        $("#h").html(show2);
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+            }
+        }
+        function Blog(id,name,title,content,c1,c2,c3) {
+            return '<div id="blog" style="background-color: lightpink;width: 800px;height:150px;padding: 10px;margin: 10px">'+
+                '<div id="detail" style="float: left;display: inline-block;width: 380px">'+
+                '<p style="margin: 5px;font-size: 13px">'+name+'</p>'+
+                '<p style="margin-left: 10px">'+title+'</p>'+
+                '<p style="margin: 15px;font-size: 15px">'+content+'</p>'+
+                '</div>'+
+                '<div id="blog.comment" style="float: right;display: inline-block;width: 380px;background-color: pink">'+
+                '<p style="margin: 10px;margin-bottom: 0px">'+c1+'</p>'+
+                '<img src="public/i/line.png" style="margin: 0px"/>'+
+                '<p style="margin: 10px;margin-bottom: 0px">'+c2+'</p>'+
+                '<img src="public/i/line.png" style="margin: 0px"/>'+
+                '<p style="margin: 10px">'+c3+'</p>'+
+                '</div>'+
+                '<button style="margin: 10px" onclick="function turn() {localStorage.setItem(\'id\',\''+id+'\');window.location.href=\'new_comment.html\';} turn()">评论</button>'+'</div>';
+        }
+        function People(name,number){
+            return '<p>'+name+'   '+number+'<\p>';
+        }
+        window.addEventListener('load', onLoadHandler);
+
+    </script>
+</head>
+<body>
+<div style="text-align:center;">
+    <a href="index.html">
+        <img src="public/i/Title.PNG" alt="兴趣花园" height="148" width="477">
+    </a>
+</div>
+<div class="banner" style="text-align: center;height:60px;background-color:salmon">
+    <img src="public/i/logo_light.png" height="45" width="45" style="float: left;padding: 8px">
+    <div class="word" style="color: #ffffff">
+        <span id="name" style="font-size: 22px;"></span><br>
+        <span id="de" style="font-size: 18px;"></span>
+    </div>
+</div>
+<div class="page" id="page">
+    <div id="word" class="word">
+        <a href="new_blog.html">发帖</a><br><br>
+    </div>
+    <div id="huoyuedu" class="huoyuedu" >
+        <p>用户活跃度</p>
+        <span id="h"></span>
+    </div>
+    <div id="blogs" class="blogs" >
+            <span id="content"></span>
+    </div>
+</div>
+
+
+</body>
+</html>

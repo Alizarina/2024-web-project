@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/HeadLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>发帖</title>
+    <style>
+        body {
+            background-color: #fff5ea;
+        }
+    </style>
+
+</head>
+<body>
+<div style="text-align:center;">
+    <a href="index.html">
+        <img src="public/i/Title.PNG" alt="兴趣花园" height="148" width="477" >
+    </a>
+</div>
+<div style="text-align:center;padding-top: 60px" class="blog">
+    <div class="title" style="margin:20px;height: 40px;">
+        帖子标题：<input type="text" name="title" id="title" style="width: 300px;height: 30px;border-radius: 3px" placeholder="请输入发帖标题">
+    </div>
+    <div class="about" style="margin:20px;height: 40px;">
+        帖子内容：<input type="text" name="about" id="about" style="width: 300px;height: 60px;border-radius: 3px" placeholder="请输入发帖内容">
+    </div><br>
+    <div class="about" style="margin:20px;height: 40px;">
+        上传图片：<input type="file" name="img" id="img" style="width: 300px;height: 60px;border-radius: 3px">
+    </div>
+    <span id="msg" style="text-align:center;font-size: 15px"></span><br><br>
+    <button type="button" id="blogBin">发帖</button><br><br><br>
+</div>
+</body>
+<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+    $('#blogBin').click(function (){
+        var title=$("#title").val();
+        var about=$("#about").val();
+        if(IsEmpty(title)){
+            $("#msg").html("标题不可为空");
+            return;
+        }
+        if(IsEmpty(about)){
+            $("#msg").html("正文不可为空");
+            return;
+        }
+        let pic='';
+        let input = document.getElementById('img');
+        if (input.files && input.files[0]) {
+            let file = input.files[0]; // 获取文件
+            // 检查文件类型
+            if (!file.type.match('image.*')) {
+                $('#msg').html('选中的文件不是图片');
+                return;
+            }
+            var reader = new FileReader(); // 创建FileReader对象
+            reader.onload = function(e) {
+                var base64 = e.target.result; // 获取Base64字符串
+                // 处理Base64字符串，例如发送到服务器或进行其他操作
+                pic=base64;
+                console.log(pic);
+            };
+            reader.readAsDataURL(file);
+        }else{
+            pic='noPic';
+        }
+        let username=localStorage.getItem('user');
+        if (username===null){
+            window.location.href='login.html';
+            return;
+        }else{
+            if(pic!=null){
+                let circle=localStorage.getItem('name');
+                $.ajax({
+                    //查询用户是否存在
+                    url:"http://localhost:5173/api/create/huoyue",
+                    method:'POST',
+                    data:{
+                        username:username,
+                        circle:circle
+                    },
+                    success:function(res){
+                        //存在则直接加活跃，不存在则创建
+                        if(res.id===0){
+                            //用户不存在
+                            $.ajax({
+                                url:"http://localhost:5173/api/create/jiaruhuoyue",
+                                method:'POST',
+                                data:{
+                                    username:username,
+                                    circle:circle
+                                },
+                                success:function(res){
+                                    console.log(res);
+                                },
+                                error:function (err){
+                                    console.log(err);
+                                }
+                            })
+                        }
+                        //加活跃
+                        $.ajax({
+                            url:"http://localhost:5173/api/create/jingyanzhi",
+                            method:'POST',
+                            data:{
+                                username:username,
+                                circle:circle
+                            },
+                            success:function(res){
+                                console.log(res);
+                            },
+                            error:function (err){
+                                console.log(err);
+                            }
+                        })
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+                $.ajax({
+                    //帖子加入数据库
+                    url:"http://localhost:5173/api/create/blog",
+                    method:'POST',
+                    data:{
+                        username:username,
+                        circle:circle,
+                        title:title,
+                        about:about,
+                        pic:pic
+                    },
+                    success:function(res){
+                        console.log(res);
+                        $("#msg").html('发帖成功');
+                        window.location.href= 'circle.html';
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+            }
+        }
+    });
+    function IsEmpty(str){
+        if(str==null||str.trim()== ""){
+            return true;
+        }
+        return false;
+    }
+</script>
+</html>
