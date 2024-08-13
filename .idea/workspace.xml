@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="编辑readme">
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="完成版本">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +77,11 @@
       <recent name="E:\2024-web-project\frontend\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\2024-web-project\frontend\src" />
+      <recent name="E:\2024-web-project\frontend\public" />
       <recent name="E:\2024-web-project\backend" />
       <recent name="E:\2024-web-project\backend\routes" />
       <recent name="E:\2024-web-project\backend\util" />
-      <recent name="E:\2024-web-project\frontend\src" />
-      <recent name="E:\2024-web-project\frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -127,7 +128,7 @@
       <workItem from="1723362877738" duration="7994000" />
       <workItem from="1723426358437" duration="35576000" />
       <workItem from="1723550640473" duration="7454000" />
-      <workItem from="1723558387107" duration="2102000" />
+      <workItem from="1723558387107" duration="2904000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -241,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723560233706</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="完成版本">
+      <option name="closed" value="true" />
+      <created>1723560859572</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1723560859572</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +281,8 @@
     <MESSAGE value="最后一个bug" />
     <MESSAGE value="评论问题已修复" />
     <MESSAGE value="编辑readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="编辑readme" />
+    <MESSAGE value="完成版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成版本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
