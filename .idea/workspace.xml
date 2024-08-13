@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="可以创建兴趣圈+首页显示">
-      <change afterPath="$PROJECT_DIR$/frontend/public/i/logo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/i/logo_pure.png" afterDir="false" />
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="美化首页显示+增加部分页面的自动跳转">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/create_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/create_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/logout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +127,7 @@
       <workItem from="1723200258165" duration="47000" />
       <workItem from="1723280809696" duration="6787000" />
       <workItem from="1723362877738" duration="7994000" />
-      <workItem from="1723426358437" duration="8275000" />
+      <workItem from="1723426358437" duration="13685000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -205,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723464196441</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="美化首页显示+增加部分页面的自动跳转">
+      <option name="closed" value="true" />
+      <created>1723467719012</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723467719012</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +235,8 @@
     <MESSAGE value="后端改为express框架，优化登录注册" />
     <MESSAGE value="登录后页面变化+退出登录页面" />
     <MESSAGE value="可以创建兴趣圈+首页显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="可以创建兴趣圈+首页显示" />
+    <MESSAGE value="美化首页显示+增加部分页面的自动跳转" />
+    <option name="LAST_COMMIT_MESSAGE" value="美化首页显示+增加部分页面的自动跳转" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

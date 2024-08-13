@@ -39,7 +39,7 @@
               method:'GET',
               success:function(res){
                   for (let i in res) {
-                      show+=Circle(res[i].name,res[i].description);
+                      show+=Circle(res[i].name);
                   }
                   $("#msg2").html(show);
               },
@@ -49,9 +49,11 @@
           })
         }
         function Circle(name) {
+            let str='<button style="float: right" onclick="function turn() {localStorage.setItem(\'name\',\''+name+'\') }turn();">进入</button>';
             return '<div style="background-color: pink;width:400px;height: 50px;display: inline-block ">\n' +
                 '                <img src="public/i/logo_light.png" height="45" width="45" style="float: left">\n' +
                 '                <h2 style="padding-top: 10px;margin: 0px;text-align: center;color: #fff5ea">'+name+'</h2>\n' +
+                str+
                 '            </div>';
         }
         window.addEventListener('load', onLoadHandler);

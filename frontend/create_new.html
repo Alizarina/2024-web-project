@@ -47,23 +47,28 @@
             return;
         }
         if(Ifchecked===1){
-            $("#msg").html('');
-            $.ajax({
-                url:"http://localhost:5173/api/create",
-                method:'POST',
-                data:{
-                    name:name,
-                    d:de
-                },
-                success:function(res){
-                    console.log(res);
-                    $("#msg").html(res.message);
-                    window.location.href= 'index.html';
-                },
-                error:function (err){
-                    console.log(err);
-                }
-            })
+            let uname=localStorage.getItem('user');
+            if (uname===null||uname===''){
+                window.location.href='login.html';
+            }else{
+                $("#msg").html('');
+                $.ajax({
+                    url:"http://localhost:5173/api/create",
+                    method:'POST',
+                    data:{
+                        name:name,
+                        d:de
+                    },
+                    success:function(res){
+                        console.log(res);
+                        $("#msg").html(res.message);
+                        window.location.href= 'index.html';
+                    },
+                    error:function (err){
+                        console.log(err);
+                    }
+                })
+            }
         }else{
             $("#msg").html("请检查或修改用户名");
             return;
