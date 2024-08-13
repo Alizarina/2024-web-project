@@ -206,10 +206,12 @@ router.post('/pinglun', function(req, res){
     let userbody=req.body;
     let number=userbody.number;
     let circle=userbody.circle;
-    let count=userbody.count;
     let username=userbody.username;
     let about=userbody.about;
     let str=username+': '+about;
+    let count=parseInt(userbody.count);
+    count+=1;
+    let list='com'+count.toString();
     let connection= mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -217,32 +219,14 @@ router.post('/pinglun', function(req, res){
         database:'user_data',
         port:3306
     })
-    const sql1=`UPDATE ${circle} SET com1 = '${str}' WHERE blog_id=${number} `;
-    const sql2=`UPDATE ${circle} SET com2 = '${str}' WHERE blog_id=${number} `;
-    const sql3=`UPDATE ${circle} SET com3 = '${str}' WHERE blog_id=${number} `;
+    let sql=`UPDATE ${circle} SET ${list} = '${str}' WHERE blog_id=${number}`;
     connection.connect();
-    if(count===0){
-        connection.query(sql1, (error, result) => {
-            if (error) {
-                throw error;
-            }
-            res.send(result);
-        });
-    }else if(count===1){
-        connection.query(sql2, (error, result) => {
-            if (error) {
-                throw error;
-            }
-            res.send(result);
-        });
-    }else if(count===2){
-        connection.query(sql3, (error, result) => {
-            if (error) {
-                throw error;
-            }
-            res.send(result);
-        });
-    }
+    connection.query(sql, (error, result) => {
+        if (error) {
+            throw error;
+        }
+        res.send(result);
+    });
     connection.end();
 });
 module.exports = router;
