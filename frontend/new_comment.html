@@ -27,7 +27,7 @@
     <button type="button" id="blogBin">评论</button><br><br><br>
 </div>
 </body>
-<script type="text/javascript" src="src/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="public/jquery-3.7.1.js"></script>
 <script type="text/javascript">
     $('#blogBin').click(function (){
         let about=$("#about").val();
@@ -79,6 +79,7 @@
                         success:function(res){
                             console.log('评论成功');
                             $("#msg").html("评论成功");
+                            window.location.href='circle.html';
                         },
                         error:function (err){
                             console.log(err);

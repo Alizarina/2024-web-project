@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="评论问题已修复">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="26bf5dd3-757c-435f-a5c6-66dd97bc5907" name="更改" comment="编辑readme">
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +127,7 @@
       <workItem from="1723362877738" duration="7994000" />
       <workItem from="1723426358437" duration="35576000" />
       <workItem from="1723550640473" duration="7454000" />
-      <workItem from="1723558387107" duration="1756000" />
+      <workItem from="1723558387107" duration="2102000" />
     </task>
     <task id="LOCAL-00001" summary="前端已创建">
       <option name="closed" value="true" />
@@ -233,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723559931812</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="编辑readme">
+      <option name="closed" value="true" />
+      <created>1723560233706</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1723560233706</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +271,8 @@
     <MESSAGE value="首页按钮区分+创建圈子页面限制登录后才可创建" />
     <MESSAGE value="最后一个bug" />
     <MESSAGE value="评论问题已修复" />
-    <option name="LAST_COMMIT_MESSAGE" value="评论问题已修复" />
+    <MESSAGE value="编辑readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="编辑readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
